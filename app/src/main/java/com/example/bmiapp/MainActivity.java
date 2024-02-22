@@ -29,13 +29,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 int wt = Integer.parseInt(edtWeight.getText().toString());
                 int ht = Integer.parseInt(edtHeight.getText().toString());
-                double ht1= ht/100;
-                double bmi= wt/(ht1*ht1);
+                double ht1= ht/100.0;
+                ht1= ht1*ht1;
+                double bmi= wt/ht1;
                 if (bmi>25)
                 {
                     result.setText("Overweight");
                 }
-                else if (bmi<18)
+                else if (bmi<19)
                 {
                     result.setText("Underweight");
                 }
